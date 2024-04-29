@@ -4,11 +4,11 @@ interface IAppProps {
 }
 
 const page = () => {
-    return (
-      <div>
-        DashBoard
-      </div>
-    );
+  return (
+    <div>
+      DashBoard
+    </div>
+  );
 }
 
 export default page;
