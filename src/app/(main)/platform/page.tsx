@@ -1,3 +1,4 @@
+import PlatformDetails from '@/components/forms/platform-form';
 import { VerifyAndAcceptInvitation, getAuthUserDetails } from '@/lib/queries';
 import { currentUser } from '@clerk/nextjs';
 import { Plan } from '@prisma/client';
@@ -43,6 +44,7 @@ const page = async ({searchParams}: {searchParams:{plan:Plan; state: string; cod
     <div className="flex justify-center items-center mt-4 ">
       <div className="max-w-[800px] border-[1px] p-4  rounded-xl">
         <h1 className='text-4xl text-zinc-800 '> Create A New Platform</h1>
+        <PlatformDetails data = {{companyEmail : authUser?.emailAddresses[0].emailAddress}}  />
       </div>
     </div>
   );
