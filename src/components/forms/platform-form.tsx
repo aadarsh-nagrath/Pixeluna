@@ -12,6 +12,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod';
 import {useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
+import FileUpload from './file-upload';
+import { Input } from '../ui/input';
 
 type Props = {
   data?: Partial<Platform> // Type for props, expecting partial Platform data
@@ -90,7 +92,8 @@ const PlatformDetails = ({data}: Props) => {
                   <FormItem>
                     <FormLabel>Platform Logo</FormLabel>
                     <FormControl>
-                      {/* Here will add FIle Upload */}
+                    <FileUpload apiEndPoint="platformLogo" onChange={field.onChange} value={field.value}
+                    />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
